@@ -9,7 +9,7 @@ wandb/
 .DS_Store
 
 # flask_session
-flask_session/*
+**/flask_session
 
 # Jupyter Notebook ckpt
 .ipynb_checkpoints/*
