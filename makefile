@@ -24,11 +24,14 @@ init:
 	pip install isort==5.11.5 ${INSTALL_FLAGS}
 	pip install black==23.3.0 ${INSTALL_FLAGS}
 	pip install autoflake==2.1.1 ${INSTALL_FLAGS}
+	pip install pyclean==2.7.4
 	pre-commit clean
 	pre-commit install
   	# To check whole pipeline.
 	# pre-commit run --all-files
 
+run:
+	gunicorn -k gevent -w 4 -b 127.0.0.1:2222 chatter.tdk.rises:app
 
 format:
 	black -q ${NAME} tests
